@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import { ThemeProvider, createTheme } from "@mui/material";
 import App from "./App";
-// import Router from './components/Router';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import ChatLayout from '/component';
-import Profile from './components';
-import ChatHeader from './components';
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import './styles.css';
+// import ChatLayout from "./component/ChatLayout";
+// import Profile from "./components/Profile";
+ import ChatHeader from "./components/ChatHeader";
 
 const Message = (props) => {
   return (
@@ -27,13 +27,6 @@ ReactDOM.render(
     />
     <ChatHeader />
    <App/>
-   <BrowserRouter>
-   <Routes> 
-        <Route exact path="/" render={() => (<Link to="/chat/0/" />)} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/chat/:chatId" render={obj => <ChatLayout chatId={Number(obj.match.params.chatId)} />} />
-       </Routes>
-    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
